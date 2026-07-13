@@ -1,5 +1,4 @@
 
----
 
 # 🌿 PlantDoc AI: Plant Disease Detector
 
@@ -16,7 +15,7 @@
   <img src="https://github.com/user-attachments/assets/5f0611ef-58c8-4dbf-acdd-66417df2e6bf" width="18%">&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/86d56f55-8277-4f44-aa10-17a4757e6fb2" width="18%">
 </p>
----
+
 ✨ Features
 
 * 📸 **Instant Disease Scanning**: Real-time scanning of plant leaves using the mobile camera for immediate detection.
