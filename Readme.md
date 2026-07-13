@@ -17,7 +17,7 @@
   <img src="https://github.com/user-attachments/assets/86d56f55-8277-4f44-aa10-17a4757e6fb2" width="18%">
 </p>
 ---
-## ✨ Features
+✨ Features
 
 * 📸 **Instant Disease Scanning**: Real-time scanning of plant leaves using the mobile camera for immediate detection.
 * 🖼️ **Gallery Upload**: Option to upload existing leaf images from the gallery for diagnosis.
