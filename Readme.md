@@ -8,13 +8,17 @@
 
 ## 📱 Application Screenshots
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ee5e8635-c399-4bb0-95ca-263b69d434f3" width="18%">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/0e1c1352-7616-4d80-84c5-2b4a2b738b55" width="18%">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/e390ce48-203f-43c5-860c-99f91b7f9276" width="18%">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/5f0611ef-58c8-4dbf-acdd-66417df2e6bf" width="18%">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/86d56f55-8277-4f44-aa10-17a4757e6fb2" width="18%">
-</p>
+<div align="center">
+  <table border="0" cellpadding="10" cellspacing="0" style="background-color: #0d1117; border: 2px solid #30363d; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/ee5e8635-c399-4bb0-95ca-263b69d434f3" width="135"></td>
+      <td><img src="https://github.com/user-attachments/assets/0e1c1352-7616-4d80-84c5-2b4a2b738b55" width="135"></td>
+      <td><img src="https://github.com/user-attachments/assets/e390ce48-203f-43c5-860c-99f91b7f9276" width="135"></td>
+      <td><img src="https://github.com/user-attachments/assets/5f0611ef-58c8-4dbf-acdd-66417df2e6bf" width="135"></td>
+      <td><img src="https://github.com/user-attachments/assets/86d56f55-8277-4f44-aa10-17a4757e6fb2" width="135"></td>
+    </tr>
+  </table>
+</div>
 
 ✨ Features
 
