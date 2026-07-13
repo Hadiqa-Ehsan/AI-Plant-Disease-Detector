@@ -1,191 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FDF8">
+    android:background="#F2F7F2">
 
-    <ScrollView
+    <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="240dp"
+        android:background="@drawable/ai_header_enhanced"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:cardCornerRadius="38dp"
+            app:cardElevation="8dp">
+
+            <ImageView
+                android:id="@+id/ivRobotIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:background="#FFFFFF"
+                android:src="@android:drawable/ic_menu_view"
+                app:tint="#4CAF50"
+                android:scaleType="centerInside" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI Plant Expert"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-black" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Powered by Gemini AI"
+                android:textColor="#E8F5E9"
+                android:textSize="13sp"
+                android:alpha="0.9"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Professional Header Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#2E7D32"
-                android:layout_marginBottom="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@android:drawable/ic_menu_help"
-                        app:tint="#FFFFFF" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginStart="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="AI Plant Expert"
-                            android:textColor="#FFFFFF"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Powered by Gemini AI"
-                            android:textColor="#C8E6C9"
-                            android:textSize="13sp"
-                            android:layout_marginTop="2dp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Analysis Result Card -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                android:layout_marginBottom="16dp">
-
+                app:cardCornerRadius="25dp"
+                app:cardElevation="4dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
+                    android:padding="22dp"
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📊 Analysis Result"
+                        android:text="🗒 Analysis Result"
                         android:textColor="#2E7D32"
-                        android:textSize="16sp"
+                        android:textSize="17sp"
                         android:textStyle="bold"
-                        android:layout_marginBottom="12dp" />
-
+                        android:drawableStart="@drawable/ic_leaf_icon"
+                        android:drawablePadding="10dp"
+                        app:drawableTint="#4CAF50"/>
                     <TextView
                         android:id="@+id/tvAIResponse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Based on my analysis, your plant shows symptoms of..."
-                        android:textColor="#333333"
-                        android:textSize="15sp"
-                        android:lineSpacingExtra="6dp" />
+                        android:layout_marginTop="12dp"
+                        android:text="Analyzing your plant..."
+                        android:textColor="#444444"
+                        android:lineSpacingExtra="4dp"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Treatment Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF"
-                android:layout_marginBottom="16dp">
-
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="2dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
+                    android:padding="22dp"
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="💊 Recommended Treatment"
-                        android:textColor="#2E7D32"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="12dp" />
-
+                        android:textColor="#1B5E20"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
                     <TextView
                         android:id="@+id/tvTreatment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1. Apply organic fungicide\n2. Remove affected leaves\n3. Improve air circulation\n4. Water in morning"
-                        android:textColor="#333333"
-                        android:textSize="14sp"
-                        android:lineSpacingExtra="8dp" />
+                        android:layout_marginTop="10dp"
+                        android:text="Detailed steps will appear here..."
+                        android:textColor="#2E7D32"
+                        android:lineSpacingExtra="4dp"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Prevention Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF"
-                android:layout_marginBottom="24dp">
-
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#F9FBF9"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="3dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
+                    android:padding="22dp"
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🛡️ Prevention Tips"
-                        android:textColor="#2E7D32"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="12dp" />
-
+                        android:text="🛡 Prevention Tips"
+                        android:textColor="#388E3C"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
                     <TextView
                         android:id="@+id/tvPrevention"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="• Avoid overhead watering\n• Space plants properly\n• Use disease-resistant varieties\n• Regular inspection"
-                        android:textColor="#333333"
-                        android:textSize="14sp"
-                        android:lineSpacingExtra="6dp" />
+                        android:layout_marginTop="10dp"
+                        android:text="How to stay safe..."
+                        android:textColor="#555555"
+                        android:lineSpacingExtra="4dp"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-    <!-- Professional Action Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnNewAnalysis"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="bottom"
-        android:layout_margin="20dp"
-        android:text="🔍 Analyze Another Plant"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:backgroundTint="#2E7D32"
-        app:icon="@android:drawable/ic_menu_camera"
-        app:iconGravity="textStart"
-        app:iconPadding="8dp" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnNewAnalysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="45dp"
+                android:paddingVertical="18dp"
+                android:text="🔍 Analyze Another Plant"
+                android:textColor="#1B5E20"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-black"
+                android:background="#FFFFFF"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

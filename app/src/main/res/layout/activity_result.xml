@@ -1,165 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FBF9"
-    android:fitsSystemWindows="true">
+    android:background="#F2F5F2">
 
-    <LinearLayout
+    <View
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="-150dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/splash_gradient"
+        android:alpha="0.3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🌿"
-                android:textSize="28sp"
-                android:layout_marginEnd="12dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Analysis Report"
-                android:textSize="24sp"
-                android:fontFamily="sans-serif-black"
-                android:textColor="#1B5E20" />
-
-            <TextView
-                android:id="@+id/tvTimestamp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Just now"
-                android:textSize="12sp"
-                android:textColor="#757575"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp" />
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="260dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            android:layout_marginBottom="24dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/resultImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@android:drawable/ic_menu_gallery" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="16dp"
-                    android:background="#80000000"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="6dp"
-                    android:text="SCANNED LEAF"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#FFFFFF"
-            android:layout_marginBottom="20dp">
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Analysis Report"
+                    android:textColor="#2D4730"
+                    android:textSize="32sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DETECTION RESULT"
-                    android:textSize="12sp"
-                    android:textColor="#757575"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.08" />
+                    android:text="🍃"
+                    android:textSize="28sp" />
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/resultText"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/suggestion_box_bg"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:elevation="0dp">
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Analyzing..."
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#1B5E20"
-                    android:layout_marginTop="8dp" />
+                    android:layout_height="240dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/resultImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@android:drawable/ic_menu_gallery" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="12dp"
+                            android:background="#991B331B"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="SCANNED LEAF"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="16dp">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="DETECTION RESULT"
+                        android:textColor="#9DAAA0"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05"/>
+
+                    <TextView
+                        android:id="@+id/resultText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Tomato Leaf Mold"
+                        android:textColor="#2D4730"
+                        android:textSize="26sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#E8E8E8" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="Confidence:"
-                        android:textSize="14sp"
-                        android:textColor="#757575" />
+                        android:textColor="#9DAAA0"
+                        android:textSize="12sp" />
 
-                    <ProgressBar
-                        android:id="@+id/confidenceBar"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="0dp"
-                        android:layout_height="8dp"
-                        android:layout_weight="1"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginEnd="8dp"
-                        android:progressTint="#4CAF50"
-                        android:max="100"
-                        android:progress="0" />
-
-                    <TextView
-                        android:id="@+id/tvConfidence"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="0%"
-                        android:textSize="14sp"
-                        android:textColor="#4CAF50"
-                        android:textStyle="bold" />
+                        android:layout_marginTop="8dp">
+                        <ProgressBar
+                            android:id="@+id/confidenceBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="80"
+                            android:progressDrawable="@drawable/custom_progress_bar" />
+                        <TextView
+                            android:id="@+id/tvConfidence"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/confidenceBar"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="4dp"
+                            android:text="80%"
+                            android:textColor="#2D4730"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/suggestion_box_bg"
                 android:orientation="vertical"
                 android:padding="20dp">
 
@@ -167,21 +163,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="📋 DISEASE DETAILS"
+                    android:textColor="#2D4730"
                     android:textSize="14sp"
-                    android:textColor="#1B5E20"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvDiseaseDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Disease description and details will appear here after analysis."
-                    android:textSize="15sp"
-                    android:textColor="#424242"
-                    android:lineSpacingExtra="6dp" />
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="6dp"
+                    android:text="• Fungal infection...\n• High humidity causes...\n• Use organic fungicide..."
+                    android:textColor="#5A6B5C"
+                    android:textSize="15sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
